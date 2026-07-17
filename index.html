@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AT Designs · Diseño de sitios web</title>
+<meta name="description" content="AT Designs. Diseñamos sitios web que se ven increíbles y trabajan por tu negocio. Limpios, rápidos y a la medida.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2316150F'/%3E%3Ctext x='50' y='66' font-family='Helvetica,Arial,sans-serif' font-size='42' font-weight='700' letter-spacing='-3' fill='%23EFE7D3' text-anchor='middle'%3EAT%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* blanco · negro · arena */
+  --bg:#FCFBF7; --panel:#F1EAD9; --ink:#16150F; --muted:#736E5F; --line:#E6DECD;
+  --sand:#E4D8BB; --sand-deep:#C9B78F; --white:#ffffff;
+  --sans:'Sora',system-ui,-apple-system,sans-serif;
+  --mono:'Space Mono',ui-monospace,Menlo,monospace;
+  --max:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3{font-family:var(--sans);font-weight:600;line-height:1.08;letter-spacing:-.03em;margin:0}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.hl{background:linear-gradient(transparent 58%,var(--sand) 58%);padding:0 .04em}
+
+/* ---- nav ---- */
+header{position:sticky;top:0;z-index:50;background:rgba(252,251,247,.82);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.scrolled{border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:11px;font-family:var(--sans);font-size:20px;font-weight:600;letter-spacing:-.02em;white-space:nowrap}
+.logo .mark{width:38px;height:38px;flex:0 0 auto;border-radius:11px;background:var(--ink);color:#EFE7D3;display:grid;place-items:center;font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:-.04em}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{font-family:var(--sans);font-size:15px;color:var(--muted);transition:color .18s}
+.nav-links a:hover{color:var(--ink)}
+.btn{font-family:var(--sans);font-size:14.5px;font-weight:500;padding:11px 21px;border-radius:999px;background:var(--ink);color:var(--white);border:1px solid var(--ink);transition:transform .15s,background .2s,color .2s;display:inline-block;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--white)}
+.btn.sand{background:var(--sand);border-color:var(--sand);color:var(--ink)}
+.btn.sand:hover{background:var(--sand-deep);border-color:var(--sand-deep)}
+.nav-toggle{display:none;background:none;border:0;font-size:26px;cursor:pointer;color:var(--ink)}
+
+/* ---- hero ---- */
+.hero{padding:100px 0 80px}
+.hero .eyebrow{margin-bottom:26px}
+.hero h1{font-size:clamp(42px,7vw,86px);font-weight:600}
+.hero .lead{font-size:clamp(17px,2.2vw,21px);color:var(--muted);max-width:620px;margin:30px 0 40px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+/* franja */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin-top:80px;background:var(--panel)}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:14px 42px;align-items:center;justify-content:space-between}
+.strip span{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.strip b{color:var(--ink);font-weight:700}
+
+/* ---- secciones ---- */
+section{padding:96px 0}
+.sec-head{max-width:660px;margin-bottom:54px}
+.sec-head h2{font-size:clamp(30px,4.4vw,46px);margin-top:16px}
+.sec-head p{color:var(--muted);font-size:17px;margin-top:16px}
+
+/* servicios */
+.grid{display:grid;gap:22px}
+.services{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:34px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -26px rgba(22,21,15,.4);border-color:var(--sand-deep)}
+.card .tick{width:30px;height:4px;border-radius:3px;background:var(--sand-deep);margin-bottom:20px}
+.card h3{font-size:23px;margin:0 0 10px}
+.card p{color:var(--muted);font-size:15.5px}
+
+/* portafolio */
+.work{grid-template-columns:repeat(2,1fr)}
+.proj{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--white);transition:transform .2s,box-shadow .2s}
+.proj:hover{transform:translateY(-4px);box-shadow:0 22px 50px -30px rgba(22,21,15,.45)}
+.proj .thumb{aspect-ratio:16/10;display:grid;place-items:center;font-family:var(--sans);font-weight:600;font-size:26px;position:relative;overflow:hidden}
+.proj .thumb span{position:relative;z-index:1;padding:0 20px;text-align:center;letter-spacing:-.02em}
+.proj .meta{padding:22px 24px 26px}
+.proj .meta h3{font-size:20px}
+.proj .meta p{color:var(--muted);font-size:14.5px;margin-top:6px}
+.proj .tag{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
+.t1{background:#16150F;color:#E8DFC7}
+.t2{background:var(--sand);color:#16150F}
+.t3{background:#26241B;color:#E8DFC7}
+.t4{background:var(--sand-deep);color:#16150F}
+
+/* proceso (bloque oscuro) */
+.process{background:var(--ink);color:#EFEADD}
+.process .eyebrow{color:var(--sand-deep)}
+.process h2{color:var(--white)}
+.process .sec-head p{color:#b2ad9d}
+.steps{grid-template-columns:repeat(4,1fr)}
+.step{border-top:1px solid #322F25;padding-top:24px}
+.step .n{font-family:var(--sans);font-weight:600;font-size:38px;color:var(--sand-deep);line-height:1;letter-spacing:-.03em}
+.step h3{font-size:20px;color:var(--white);margin:16px 0 8px}
+.step p{color:#b2ad9d;font-size:15px}
+
+/* nosotros */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.about h2{font-size:clamp(30px,4.4vw,46px)}
+.about p{color:var(--muted);font-size:17px;margin-top:20px}
+.about .signature{font-family:var(--sans);font-weight:500;font-size:19px;color:var(--ink);margin-top:26px}
+.about-visual{aspect-ratio:4/5;border-radius:22px;background:linear-gradient(155deg,var(--panel),var(--sand));border:1px solid var(--line);display:grid;place-items:center}
+.about-visual .mark-lg{width:132px;height:132px;border-radius:30px;background:var(--ink);color:#EFE7D3;display:grid;place-items:center;font-family:var(--sans);font-weight:700;font-size:54px;letter-spacing:-.05em}
+
+/* cta final */
+.cta{text-align:center}
+.cta h2{font-size:clamp(34px,6vw,66px);max-width:860px;margin:0 auto;font-weight:600}
+.cta p{color:var(--muted);font-size:18px;margin:24px auto 38px;max-width:520px}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:46px 0}
+.foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.foot .logo{font-size:18px}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap}
+.foot-links a{font-size:14px;color:var(--muted)}
+.foot-links a:hover{color:var(--ink)}
+.copy{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:26px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:860px){
+  .about-grid{grid-template-columns:1fr;gap:34px}
+  .steps{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  .nav-links{position:fixed;inset:76px 0 auto 0;background:var(--bg);flex-direction:column;align-items:flex-start;gap:0;padding:8px 28px 24px;border-bottom:1px solid var(--line);display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:14px 0;width:100%;font-size:17px;border-bottom:1px solid var(--line)}
+  .nav-links .btn{margin-top:14px;border:1px solid var(--ink)}
+  .nav-toggle{display:block}
+}
+@media(max-width:640px){
+  .services,.work,.steps{grid-template-columns:1fr}
+  section{padding:70px 0}
+  .hero{padding:66px 0 56px}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="logo" href="#top"><span class="mark">AT</span> Designs</a>
+    <nav class="nav-links" id="menu">
+      <a href="#servicios">Servicios</a>
+      <a href="#trabajo">Trabajo</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#nosotros">Nosotros</a>
+      <a class="btn sand" href="#contacto">Hablemos</a>
+    </nav>
+    <button class="nav-toggle" id="toggle" aria-label="Menú">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow reveal">Estudio de diseño web</div>
+    <h1 class="reveal">Sitios web que se ven <span class="hl">increíbles</span> y trabajan por ti.</h1>
+    <p class="lead reveal">En AT Designs diseñamos y desarrollamos páginas web limpias, rápidas y hechas a la medida de tu marca. Sin plantillas genéricas, sin complicaciones. Tú cuentas la idea, nosotros la ponemos en línea.</p>
+    <div class="hero-cta reveal">
+      <a class="btn" href="#contacto">Cuéntanos tu proyecto</a>
+      <a class="btn ghost" href="#trabajo">Ver nuestro trabajo</a>
+    </div>
+  </div>
+  <div class="strip reveal">
+    <div class="wrap">
+      <span><b>Diseño</b> a la medida</span>
+      <span><b>Desarrollo</b> propio</span>
+      <span><b>Rápido</b> y responsive</span>
+      <span><b>Listo</b> para celular</span>
+      <span><b>Acompañamiento</b> cercano</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Qué hacemos</div>
+      <h2>Todo lo que tu marca necesita para brillar en línea.</h2>
+      <p>Desde la primera idea hasta el sitio publicado y funcionando. Nos encargamos de que se vea bien y de que cumpla su trabajo.</p>
+    </div>
+    <div class="grid services">
+      <div class="card reveal"><div class="tick"></div><h3>Diseño de sitios web</h3><p>Páginas a la medida para tu negocio, marca o proyecto. Diseño único, pensado para verse impecable y transmitir confianza desde el primer segundo.</p></div>
+      <div class="card reveal"><div class="tick"></div><h3>Landing pages</h3><p>Páginas de una sola vista, directas y persuasivas, ideales para lanzar un producto, una campaña o captar clientes con un mensaje claro.</p></div>
+      <div class="card reveal"><div class="tick"></div><h3>Rediseños</h3><p>¿Tu sitio se ve viejo o no convierte? Le damos una vuelta completa: más moderno, más rápido y mucho más fácil de usar.</p></div>
+      <div class="card reveal"><div class="tick"></div><h3>Identidad y detalles</h3><p>Colores, tipografías y esos toques que hacen que tu marca se sienta profesional y coherente en todas partes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRABAJO -->
+<section id="trabajo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Trabajo</div>
+      <h2>Algunos de nuestros proyectos.</h2>
+      <p>Una muestra de lo que hemos diseñado. Cada sitio, pensado a la medida de su marca.</p>
+    </div>
+    <!-- Cambia estos por tus proyectos reales: título, tipo de cliente y (si quieres) enlázalos al sitio -->
+    <div class="grid work">
+      <a class="proj reveal" href="#contacto"><div class="thumb t1"><span>Proyecto uno</span></div><div class="meta"><h3>Marca personal</h3><p>Sitio limpio y elegante para un profesional independiente.</p><span class="tag">Diseño web</span></div></a>
+      <a class="proj reveal" href="#contacto"><div class="thumb t2"><span>Proyecto dos</span></div><div class="meta"><h3>Tienda y catálogo</h3><p>Página para mostrar productos y atraer clientes.</p><span class="tag">Landing</span></div></a>
+      <a class="proj reveal" href="#contacto"><div class="thumb t3"><span>Proyecto tres</span></div><div class="meta"><h3>Negocio local</h3><p>Presencia en línea moderna, rápida y lista para celular.</p><span class="tag">Rediseño</span></div></a>
+      <a class="proj reveal" href="#contacto"><div class="thumb t4"><span>Proyecto cuatro</span></div><div class="meta"><h3>Empresa</h3><p>Sitio corporativo con identidad propia y buena estructura.</p><span class="tag">Diseño web</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso" class="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Cómo trabajamos</div>
+      <h2>Un proceso simple, sin vueltas.</h2>
+      <p>Nos gusta que sepas qué va a pasar en cada paso. Nada de sorpresas, todo claro.</p>
+    </div>
+    <div class="grid steps">
+      <div class="step reveal"><div class="n">1</div><h3>Conversamos</h3><p>Nos cuentas tu idea, tu marca y qué quieres lograr. Escuchamos y proponemos.</p></div>
+      <div class="step reveal"><div class="n">2</div><h3>Diseñamos</h3><p>Creamos una propuesta a la medida y la afinamos contigo hasta que te enamore.</p></div>
+      <div class="step reveal"><div class="n">3</div><h3>Lanzamos</h3><p>Desarrollamos el sitio, lo dejamos rápido, responsive y lo publicamos en línea.</p></div>
+      <div class="step reveal"><div class="n">4</div><h3>Acompañamos</h3><p>Quedamos cerca para ajustes, dudas y para que tu sitio siga creciendo contigo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="eyebrow">Nosotros</div>
+      <h2>Somos AT Designs.</h2>
+      <p>Somos una empresa dedicada al diseño y desarrollo de sitios web. Ayudamos a marcas, negocios y profesionales a tener una presencia en línea que se ve impecable y trabaja por ellos.</p>
+      <p>Creemos que un buen sitio web no es solo bonito: es claro, rápido y transmite confianza. Por eso tomamos cada proyecto como propio y cuidamos cada detalle, desde la primera idea hasta el sitio publicado y funcionando.</p>
+      <div class="signature">Diseño con intención, en cada proyecto.</div>
+    </div>
+    <div class="about-visual reveal"><span class="mark-lg">AT</span></div>
+  </div>
+</section>
+
+<!-- CTA / CONTACTO -->
+<section id="contacto" class="cta">
+  <div class="wrap">
+    <h2 class="reveal">¿Tienes una idea? <span class="hl">Hagámosla realidad.</span></h2>
+    <p class="reveal">Cuéntanos qué necesitas y te respondemos para conversar sobre tu proyecto. Sin compromiso.</p>
+    <div class="cta-row reveal">
+      <!-- Cambia el correo y el número por los suyos -->
+      <a class="btn" href="mailto:almandozterralavorodesigns@gmail.com?subject=Quiero%20un%20sitio%20web">Escríbenos por correo</a>
+      <a class="btn sand" href="https://wa.me/584242563612?text=Hola%20AT%20Designs,%20quiero%20un%20sitio%20web" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="logo" href="#top"><span class="mark">AT</span> Designs</a>
+      <div class="foot-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajo">Trabajo</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> AT Designs · Diseñamos la web que tu marca merece.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const header=document.querySelector('header');
+  addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>8),{passive:true});
+  const toggle=document.getElementById('toggle'), menu=document.getElementById('menu');
+  toggle.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.14});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i%4,3)*70)+'ms';io.observe(el);});
+</script>
+</body></html>
